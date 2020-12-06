@@ -5,21 +5,21 @@ class Line:
     def __init__(self, start:Point, end:Point):
         if start.GetArity() != end.GetArity():
             raise RuntimeError("Разная размерность")
-        self.start = start
-        self.end = end
+        self._start = start
+        self._end = end
     
     @property
-    def Start(self):
-        return self.start
+    def start(self):
+        return self._start
 
     @property
-    def End(self):
-        return self.end
+    def end(self):
+        return self._end
 
     def __str__(self):
-        return (f"FROM: {self.Start}\nTO: {self.End}")
+        return (f"FROM: {self.start}\nTO: {self.end}")
 
-    def GetLength(self):
+    def getLength(self):
         arity = self.start.GetArity()
         sum = 0
         for i in range(0,arity):
